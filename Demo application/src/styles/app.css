@@ -24,6 +24,13 @@
   --dudo-floating-control-top: max(24px, calc(12px + var(--sat)));
   --bottom-nav-bottom: max(8px, calc(var(--sab) - 24px));
   --bottom-nav-clearance: calc(106px + var(--sab));
+  --type-display: 32px;
+  --type-page-title: 28px;
+  --type-section-title: 22px;
+  --type-card-title: 18px;
+  --type-body: 14px;
+  --type-supporting: 13.5px;
+  --type-caption: 12px;
 }
 
 html {
@@ -290,6 +297,82 @@ button:disabled {
 
 .app-screen > main > .relative:first-child > .absolute.left-5.right-5.top-6 {
   top: var(--dudo-floating-control-top) !important;
+}
+
+@media (max-width: 430px) {
+  .app-shell {
+    font-size: var(--type-body);
+    line-height: 1.36;
+  }
+
+  .app-screen :is(h1, h2, h3, p, span, button, label, input, textarea) {
+    letter-spacing: 0 !important;
+  }
+
+  .app-screen :is(h1, .ui-title, .dudo-title-xl, .dudo-title-lg) {
+    overflow-wrap: anywhere;
+    text-wrap: balance;
+  }
+
+  .app-screen :is(h1, .dudo-title-xl, .dudo-title-lg):is(.text-\[36px\], .text-\[34px\], .text-\[32px\], .text-3xl, .text-2xl, .text-xl),
+  .app-screen main > header h1,
+  .app-screen .dudo-page > section:first-child h1 {
+    font-size: var(--type-page-title) !important;
+    line-height: 1.06 !important;
+    font-weight: 650 !important;
+  }
+
+  .app-screen :is(h2, h3, button, p, span):is(.text-\[36px\], .text-6xl) {
+    font-size: var(--type-display) !important;
+    line-height: 1 !important;
+  }
+
+  .app-screen :is(h2, h3, button, p, span):is(.text-\[32px\], .text-3xl) {
+    font-size: 25px !important;
+    line-height: 1.08 !important;
+  }
+
+  .app-screen :is(h2, h3, button, p, span):is(.text-\[25px\], .text-\[24px\], .text-2xl) {
+    font-size: var(--type-section-title) !important;
+    line-height: 1.12 !important;
+  }
+
+  .app-screen :is(h2, h3, button, p, span, label):is(.text-xl) {
+    font-size: 19px !important;
+    line-height: 1.18 !important;
+  }
+
+  .app-screen :is(h2, h3, button, p, span, label):is(.text-lg, .text-\[17px\]) {
+    font-size: var(--type-card-title) !important;
+    line-height: 1.22 !important;
+  }
+
+  .app-screen :is(button, p, span, label, input, textarea):is(.text-base) {
+    font-size: var(--type-body) !important;
+    line-height: 1.34 !important;
+  }
+
+  .app-screen :is(button, p, span, label, input, textarea):is(.text-sm) {
+    font-size: var(--type-supporting) !important;
+    line-height: 1.36 !important;
+  }
+
+  .app-screen :is(button, p, span, label):is(.text-xs, .text-\[11px\], .text-\[10px\]) {
+    font-size: var(--type-caption) !important;
+    line-height: 1.32 !important;
+  }
+
+  .app-screen :is(.font-black, .font-bold) {
+    font-weight: 700 !important;
+  }
+
+  .app-screen :is(.font-semibold) {
+    font-weight: 620 !important;
+  }
+
+  .app-screen :is(.uppercase) {
+    letter-spacing: 0.08em !important;
+  }
 }
 
 /* Desktop: phone frame with rounded corners */
