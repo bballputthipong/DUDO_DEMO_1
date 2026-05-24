@@ -311,7 +311,7 @@ button:disabled {
 }
 
 .dudo-page {
-  padding: calc(24px + var(--sat)) 20px calc(112px + var(--sab));
+  padding: calc(8px + var(--sat)) 20px calc(124px + var(--sab));
 }
 
 .dudo-card {

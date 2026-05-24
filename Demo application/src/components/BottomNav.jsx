@@ -11,19 +11,19 @@ export default function BottomNav({ activeTab, setActiveTab }) {
 
   return (
     <nav 
-      className="fixed left-1/2 z-40 w-[min(86vw,372px)] -translate-x-1/2 rounded-full glass-light p-1.5 shadow-sys-lg"
-      style={{ bottom: "calc(18px + env(safe-area-inset-bottom, 0px))" }}
+      className="fixed left-1/2 z-40 w-[min(92vw,400px)] -translate-x-1/2 rounded-full glass-light p-2 shadow-sys-lg"
+      style={{ bottom: "calc(16px + env(safe-area-inset-bottom, 0px))" }}
     >
-      <div className="grid grid-cols-5 gap-0.5">
+      <div className="grid grid-cols-5 gap-1">
         {tabs.map(([tab, icon]) => (
           <button
             key={tab}
             onClick={() => setActiveTab(tab)}
-            className={`flex h-12 flex-col items-center justify-center gap-0.5 rounded-full text-[10px] font-medium leading-none ${
-              activeTab === tab ? "bg-[#4D54F8] text-white" : "text-[#111827]/75"
+            className={`flex h-16 flex-col items-center justify-center gap-1 rounded-full text-[11px] font-semibold tracking-wide leading-none ${
+              activeTab === tab ? "bg-[#4D54F8] text-white shadow-md" : "text-[#111827]/75"
             }`}
           >
-            <Icon name={activeTab === tab ? `${icon}-fill` : icon} className="text-[20px]" />
+            <Icon name={activeTab === tab ? `${icon}-fill` : icon} className="text-[24px]" />
             <span>{tab === "Discovery" ? "Discover" : tab}</span>
           </button>
         ))}
