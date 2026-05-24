@@ -23,12 +23,12 @@
 }
 
 html {
-  height: 100%;
+  height: 100dvh;
   overflow: hidden;
 }
 
 body {
-  height: 100%;
+  height: 100dvh;
   background: #06074A;
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
@@ -43,7 +43,7 @@ body {
 }
 
 #root {
-  height: 100%;
+  height: 100dvh;
   overflow: hidden;
 }
 
@@ -217,7 +217,7 @@ button:disabled {
 
 .app-shell {
   width: min(100vw, 430px);
-  height: 100%;
+  height: 100dvh;
   overflow-x: hidden;
   overflow-y: auto;
   overscroll-behavior-y: contain;
@@ -311,7 +311,7 @@ button:disabled {
 }
 
 .dudo-page {
-  padding: 24px 20px 112px;
+  padding: calc(24px + var(--sat)) 20px calc(112px + var(--sab));
 }
 
 .dudo-card {
