@@ -7,7 +7,7 @@ export default function Community({ posts, setPosts, onBook }) {
   };
 
   return (
-    <main className="space-y-5 px-5 pb-28 pt-6">
+    <main className="dudo-page space-y-5">
       <div className="flex items-center gap-3">
         <div className="flex h-12 flex-1 items-center gap-3 rounded-full bg-white px-4 shadow-sys-sm">
           <Icon name="ph-magnifying-glass" className="text-2xl" />

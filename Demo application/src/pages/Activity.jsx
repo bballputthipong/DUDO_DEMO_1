@@ -22,7 +22,7 @@ export default function Activity({
   const booking = activeBooking || { ...studios[1], className: "Tuesday Climbing", selectedDate: "Sat, 28 Jun 2025", selectedTime: "10:00 AM" };
 
   return (
-    <main className="space-y-5 px-5 pb-28 pt-6">
+    <main className="dudo-page space-y-5">
       <header>
         <h1 className="text-[34px] font-semibold leading-none tracking-normal text-[#06074A]">Activity</h1>
         <div className="mt-5 grid grid-cols-3 gap-2.5">

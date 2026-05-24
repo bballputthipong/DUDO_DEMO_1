@@ -8,7 +8,7 @@ export default function Profile({ credits, setCredits, subscription, onOpenSubsc
   const [privateMode, setPrivateMode] = useState(true);
 
   return (
-    <main className="space-y-5 px-5 pb-28 pt-6">
+    <main className="dudo-page space-y-5">
       <section className="rounded-[22px] bg-[#F9FAFB] p-1">
         <div className="flex items-center gap-4">
           <div className="grid h-16 w-16 place-items-center rounded-full bg-[#E5D9CB] text-xl font-bold text-[#111827]">A</div>

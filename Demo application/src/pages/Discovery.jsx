@@ -32,7 +32,7 @@ export default function Discovery({ onBook, onNavigate, onOpenStudio, onOpenArti
   const heroStudio = filtered[0] || studios[0];
 
   return (
-    <main className="pb-28">
+    <main style={{ paddingBottom: "calc(124px + env(safe-area-inset-bottom, 0px))" }}>
       <DiscoveryHeader subTab={subTab} setSubTab={setSubTab} />
       {subTab === "Main" && (
         <MainLanding
@@ -84,7 +84,7 @@ export default function Discovery({ onBook, onNavigate, onOpenStudio, onOpenArti
 
 function DiscoveryHeader({ subTab, setSubTab }) {
   return (
-    <div className="sticky top-0 z-30 glass-light px-5 pb-3 pt-6">
+    <div className="sticky top-0 z-30 glass-light px-5 pb-3" style={{ paddingTop: "calc(12px + env(safe-area-inset-top, 0px))" }}>
       <div className="flex items-center gap-3">
         <div className="flex flex-1 rounded-full bg-white/80 p-1">
           {["Main", "Near by", "Explore"].map((tab) => (

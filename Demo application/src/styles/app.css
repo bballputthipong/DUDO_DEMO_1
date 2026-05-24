@@ -226,7 +226,7 @@ button:disabled {
 }
 
 /* Desktop: phone frame with rounded corners */
-@media (min-width: 431px) {
+@media (min-width: 640px) {
   .app-shell {
     border-radius: 44px;
     box-shadow:

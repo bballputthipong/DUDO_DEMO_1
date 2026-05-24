@@ -8,7 +8,7 @@ export default function Home({ credits, activeBooking, onNavigate, onBook, onOpe
   const recommended = studios.slice(0, 4);
 
   return (
-    <main className="space-y-6 px-5 pb-28 pt-6">
+    <main className="dudo-page space-y-6">
       <section>
         <div className="flex items-center gap-3">
           <button onClick={() => onNavigate("Profile")} className="grid h-14 w-14 place-items-center rounded-full bg-[#E5D9CB] text-[#111827]">
@@ -20,26 +20,26 @@ export default function Home({ credits, activeBooking, onNavigate, onBook, onOpe
           </div>
         </div>
 
-        <div className="mt-5 grid grid-cols-4 gap-2.5">
+        <div className="mt-5 grid grid-cols-4 gap-2">
           {[
             ["Wallet", "ph-wallet", "Profile"],
-            ["My Credit", "ph-coins", "Profile"],
+            ["Credit", "ph-coins", "Profile"],
             ["Recommend", "ph-sparkle", "Discovery"],
             ["Recovery", "ph-waves", "Discovery"],
-            ["Trending Classes", "ph-trend-up", "Discovery"],
-            ["Invite Friends", "ph-users-three", "Community"],
+            ["Trending", "ph-trend-up", "Discovery"],
+            ["Invite", "ph-users-three", "Community"],
             ["Check-in", "ph-qr-code", "Activity"],
-            ["Saved Places", "ph-map-pin", "Discovery"]
+            ["Saved", "ph-map-pin", "Discovery"]
           ].map(([label, icon, tab]) => (
             <button
               key={label}
               onClick={() => onNavigate(tab)}
-              className="flex h-[84px] min-w-0 flex-col items-center justify-center gap-2 rounded-[24px] bg-primary-500/10 px-1 text-center text-[10.5px] font-semibold leading-[1.05] text-[#111827] shadow-sys-sm"
+              className="flex h-[84px] min-w-0 flex-col items-center justify-center gap-1.5 rounded-[22px] bg-primary-500/10 px-1 text-center text-[10px] font-semibold leading-[1.1] text-[#111827] shadow-sys-sm"
             >
               <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-white text-primary-500 shadow-sys-sm">
                 <Icon name={icon} className="text-xl" />
               </span>
-              <span className="line-clamp-2 min-h-[22px]">{label}</span>
+              <span className="line-clamp-2">{label}</span>
             </button>
           ))}
         </div>
