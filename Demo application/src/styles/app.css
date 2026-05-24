@@ -60,8 +60,10 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: linear-gradient(180deg, rgba(6,7,74,0.92) 0%, rgba(6,7,74,0.78) 70%, transparent 100%);
-  color: #FFFFFF;
+  background: rgba(249, 250, 251, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: #111827;
   font-size: 15px;
   font-weight: 600;
   letter-spacing: 0.02em;
@@ -76,7 +78,7 @@ body {
   width: 126px;
   height: 34px;
   border-radius: 0 0 22px 22px;
-  background: #06074A;
+  background: #000000;
   position: absolute;
   top: 0;
   left: 50%;
