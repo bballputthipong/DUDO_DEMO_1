@@ -29,7 +29,7 @@ html {
 
 body {
   height: 100dvh;
-  background: #06074A;
+  background: #F9FAFB;
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   text-rendering: geometricPrecision;
@@ -228,6 +228,10 @@ button:disabled {
 
 /* Desktop: phone frame with rounded corners */
 @media (min-width: 640px) {
+  body {
+    background: #06074A;
+  }
+  
   .app-shell {
     border-radius: 44px;
     box-shadow:
@@ -313,6 +317,10 @@ button:disabled {
 
 .dudo-page {
   padding: max(32px, calc(16px + var(--sat))) 20px calc(124px + var(--sab));
+}
+
+.dudo-page-no-nav {
+  padding: max(32px, calc(16px + var(--sat))) 20px max(32px, calc(16px + var(--sab)));
 }
 
 .dudo-card {

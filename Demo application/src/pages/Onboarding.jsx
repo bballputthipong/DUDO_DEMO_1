@@ -62,7 +62,7 @@ export default function Onboarding({ onComplete }) {
 
   return (
     <main
-      className="min-h-screen bg-[#F9FAFB] px-5 pb-8 pt-4"
+      className="dudo-page-no-nav min-h-[100dvh] bg-[#F9FAFB] flex flex-col"
       onTouchStart={(event) => setTouchStart({ x: event.touches[0].clientX, y: event.touches[0].clientY })}
       onTouchEnd={handleTouchEnd}
     >
@@ -80,7 +80,7 @@ export default function Onboarding({ onComplete }) {
         </header>
       )}
 
-      <div className="min-h-[calc(100vh-7rem)]">
+      <div className="flex-1 flex flex-col">
         {step === 0 && <Splash onNext={next} />}
         {step === 1 && <Welcome onNext={next} onLogin={() => finish("Home")} />}
         {step === 2 && <TrackingValue onNext={next} />}
@@ -152,7 +152,7 @@ function Splash({ onNext }) {
 
 function Welcome({ onNext, onLogin }) {
   return (
-    <section className="flex min-h-[calc(100vh-7rem)] flex-col">
+    <section className="flex flex-1 flex-col">
       <div>
         <h1 className="text-[30px] font-semibold leading-tight text-[#06074A]">Welcome to DUDO</h1>
         <p className="mt-3 max-w-[18rem] text-sm leading-6 text-[#111827]/68">Your all-in-one home for fitness, wellness, and community. Let’s build a stronger you, together.</p>
@@ -228,7 +228,7 @@ function CommunityValue({ onNext }) {
 
 function AccountStep({ onNext, onLogin }) {
   return (
-    <section className="flex min-h-[calc(100vh-7rem)] flex-col">
+    <section className="flex flex-1 flex-col">
       <h1 className="text-[30px] font-semibold leading-tight text-[#06074A]">Create Your Account</h1>
       <p className="mt-3 text-sm leading-6 text-[#111827]/65">Join DUDO and start your wellness journey.</p>
       <div className="mt-10 space-y-3">
@@ -339,7 +339,7 @@ function Notifications({ selected, onToggle, onNext }) {
 
 function AllSet({ onComplete }) {
   return (
-    <section className="flex min-h-[calc(100vh-7rem)] flex-col items-center justify-center text-center">
+    <section className="flex flex-1 flex-col items-center justify-center text-center">
       <div className="relative grid h-32 w-32 place-items-center rounded-full bg-[#AAF980]">
         <Icon name="ph-check-bold" className="text-6xl text-[#111827]" />
         {["left-2 top-2", "right-1 top-8", "left-8 -top-5", "right-8 -bottom-4"].map((pos, index) => (
@@ -355,7 +355,7 @@ function AllSet({ onComplete }) {
 
 function OnboardingFrame({ title, body, children, onNext, cta = "Next" }) {
   return (
-    <section className="flex min-h-[calc(100vh-7rem)] flex-col">
+    <section className="flex flex-1 flex-col">
       <div>
         <h1 className="text-[30px] font-semibold leading-tight text-[#06074A]">{title}</h1>
         <p className="mt-3 max-w-[19rem] text-sm leading-6 text-[#111827]/65">{body}</p>
