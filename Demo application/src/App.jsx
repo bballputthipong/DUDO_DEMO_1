@@ -4,6 +4,7 @@ import FilterSheet from "./components/FilterSheet.jsx";
 import RatingReviewModal from "./components/RatingReviewModal.jsx";
 import SnapShareStudio from "./components/SnapShareStudio.jsx";
 import Toast from "./components/Toast.jsx";
+import Onboarding from "./pages/Onboarding.jsx";
 import Home from "./pages/Home.jsx";
 import Discovery from "./pages/Discovery.jsx";
 import Activity from "./pages/Activity.jsx";
@@ -58,6 +59,7 @@ export default function App() {
   const [subscriptionCheckout, setSubscriptionCheckout] = useState(null);
   const [subscription, setSubscription] = useState(null);
   const [toast, setToast] = useState("");
+  const [onboardingDone, setOnboardingDone] = useState(false);
   const [swipeStart, setSwipeStart] = useState(null);
   const [swipingBack, setSwipingBack] = useState(false);
 
@@ -255,6 +257,13 @@ export default function App() {
     showToast("Post published to Community.");
   };
 
+  const handleCompleteOnboarding = (tab = "Home") => {
+    setOnboardingDone(true);
+    setActiveTab(tab);
+    setStudioFlowPage(null);
+    showToast("Welcome to DUDO.");
+  };
+
   const bookingForModals = activeBooking || studios[0];
   const showStudioFlow = Boolean(studioFlowPage);
   const screenKey = studioFlowPage || activeTab;
@@ -276,6 +285,12 @@ export default function App() {
   return (
     <div className="min-h-screen bg-[#E5D9CB]">
       <div className="app-shell mx-auto min-h-screen bg-[#F9FAFB] shadow-sys-lg">
+        {!onboardingDone && (
+          <div className="app-screen">
+            <Onboarding onComplete={handleCompleteOnboarding} />
+          </div>
+        )}
+        {onboardingDone && (
         <div
           key={screenKey}
           className={`app-screen ${swipingBack ? "is-edge-swiping" : ""}`}
@@ -574,8 +589,9 @@ export default function App() {
           />
         )}
         </div>
+        )}
       </div>
-      {!showStudioFlow && <BottomNav activeTab={activeTab} setActiveTab={handleNavigate} />}
+      {onboardingDone && !showStudioFlow && <BottomNav activeTab={activeTab} setActiveTab={handleNavigate} />}
       <FilterSheet
         open={filterOpen}
         onClose={() => setFilterOpen(false)}
