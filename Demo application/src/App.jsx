@@ -64,6 +64,7 @@ export default function App() {
   const [swipeStart, setSwipeStart] = useState(null);
   const [swipingBack, setSwipingBack] = useState(false);
   const appShellRef = useRef(null);
+  const canSwipeBack = Boolean(studioFlowPage);
 
   const showToast = (message) => {
     setToast(message);
@@ -114,13 +115,13 @@ export default function App() {
   };
 
   const handleTouchStart = (event) => {
-    if (!studioFlowPage || filterOpen || reviewOpen || snapOpen) return;
+    if (!canSwipeBack || filterOpen || reviewOpen || snapOpen) return;
     const touch = event.touches[0];
     setSwipeStart({ x: touch.clientX, y: touch.clientY, t: Date.now() });
   };
 
   const handleTouchMove = (event) => {
-    if (!swipeStart || swipeStart.x > 50) return;
+    if (!swipeStart || swipeStart.x > 96) return;
     const touch = event.touches[0];
     const dx = touch.clientX - swipeStart.x;
     const dy = Math.abs(touch.clientY - swipeStart.y);
@@ -135,7 +136,7 @@ export default function App() {
     const elapsed = Date.now() - swipeStart.t;
     setSwipeStart(null);
     setSwipingBack(false);
-    if (swipeStart.x <= 50 && dx > 60 && dy < 58 && elapsed < 700) {
+    if (swipeStart.x <= 96 && dx > 64 && dy < 58 && elapsed < 700) {
       navigator.vibrate?.(8);
       goBackFromFlow();
     }
@@ -288,6 +289,7 @@ export default function App() {
     <div className="h-[100dvh] bg-[#F9FAFB] sm:bg-[#06074A] flex justify-center overflow-hidden">
       <div className="app-shell mx-auto bg-[#F9FAFB] shadow-sys-lg relative" ref={appShellRef}>
         <StatusBar />
+        <div className="dudo-safearea-blur" aria-hidden="true"></div>
         {!onboardingDone && (
           <div className="app-screen">
             <Onboarding onComplete={handleCompleteOnboarding} />
@@ -301,7 +303,7 @@ export default function App() {
           onTouchMove={handleTouchMove}
           onTouchEnd={handleTouchEnd}
         >
-        {showStudioFlow && <div className="edge-swipe-affordance" aria-hidden="true"><span></span></div>}
+        {canSwipeBack && <div className="edge-swipe-affordance" aria-hidden="true"><span></span></div>}
         {studioFlowPage === "detail" && (
           <StudioDetail
             studio={selectedStudio}

@@ -20,6 +20,10 @@
   --sal: env(safe-area-inset-left, 0px);
   --sar: env(safe-area-inset-right, 0px);
   --status-bar-h: 54px;
+  --dudo-page-top: max(32px, calc(16px + var(--sat)));
+  --dudo-floating-control-top: max(24px, calc(12px + var(--sat)));
+  --bottom-nav-bottom: max(8px, calc(var(--sab) - 24px));
+  --bottom-nav-clearance: calc(106px + var(--sab));
 }
 
 html {
@@ -60,7 +64,7 @@ body {
 }
 
 .dudo-subpage-header {
-  padding-top: max(32px, calc(16px + var(--sat)));
+  padding-top: var(--dudo-page-top);
 }
 
 /* ── Status Bar ────────────────────────────── */
@@ -244,6 +248,50 @@ button:disabled {
   position: relative;
 }
 
+.dudo-safearea-blur {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  z-index: 38;
+  width: min(100vw, 640px);
+  height: max(54px, calc(var(--sat) + 22px));
+  transform: translateX(-50%);
+  pointer-events: none;
+  background: linear-gradient(
+    180deg,
+    rgba(249, 250, 251, 0.98) 0%,
+    rgba(249, 250, 251, 0.9) 62%,
+    rgba(249, 250, 251, 0) 100%
+  );
+  backdrop-filter: blur(30px) saturate(1.12);
+  -webkit-backdrop-filter: blur(30px) saturate(1.12);
+  mask-image: linear-gradient(to bottom, black 78%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 78%, transparent 100%);
+}
+
+.bottom-nav {
+  bottom: var(--bottom-nav-bottom);
+}
+
+.app-screen > main[class*="pt-6"],
+.app-screen > main[class*="pt-10"] {
+  padding-top: var(--dudo-page-top) !important;
+}
+
+.app-screen > main[class*="pb-8"],
+.app-screen > main[class*="pb-12"] {
+  padding-bottom: max(32px, calc(18px + var(--sab))) !important;
+}
+
+.app-screen > main[class*="pb-28"],
+.app-screen > main[class*="pb-32"] {
+  padding-bottom: max(112px, var(--bottom-nav-clearance)) !important;
+}
+
+.app-screen > main > .relative:first-child > .absolute.left-5.right-5.top-6 {
+  top: var(--dudo-floating-control-top) !important;
+}
+
 /* Desktop: phone frame with rounded corners */
 @media (min-width: 640px) {
   body {
@@ -334,11 +382,11 @@ button:disabled {
 }
 
 .dudo-page {
-  padding: max(32px, calc(16px + var(--sat))) 20px calc(124px + var(--sab));
+  padding: var(--dudo-page-top) 20px var(--bottom-nav-clearance);
 }
 
 .dudo-page-no-nav {
-  padding: max(32px, calc(16px + var(--sat))) 20px max(32px, calc(16px + var(--sab)));
+  padding: var(--dudo-page-top) 20px max(32px, calc(16px + var(--sab)));
 }
 
 .dudo-card {

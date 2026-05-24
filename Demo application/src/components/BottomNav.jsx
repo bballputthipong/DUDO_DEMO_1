@@ -11,8 +11,7 @@ export default function BottomNav({ activeTab, setActiveTab }) {
 
   return (
     <nav 
-      className="fixed left-1/2 z-40 w-[min(90vw,390px)] -translate-x-1/2 rounded-full glass-light p-1.5 shadow-sys-lg"
-      style={{ bottom: "env(safe-area-inset-bottom, 8px)" }}
+      className="bottom-nav fixed left-1/2 z-40 w-[min(90vw,390px)] -translate-x-1/2 rounded-full glass-light p-1.5 shadow-sys-lg"
     >
       <div className="flex items-center justify-between px-1">
         {tabs.map(([tab, icon]) => (
