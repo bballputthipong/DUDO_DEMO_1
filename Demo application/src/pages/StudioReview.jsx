@@ -13,7 +13,7 @@ export default function StudioReview({ studio, onBack }) {
 
   return (
     <main className="min-h-screen bg-[#F9FAFB] pb-8">
-      <header className="sticky top-0 z-20 flex items-center gap-4 border-b border-[#111827]/10 bg-[#F9FAFB]/90 p-5 backdrop-blur-xl">
+      <header className="sticky top-0 z-20 flex items-center gap-4 border-b border-[#111827]/10 bg-[#F9FAFB]/90 px-5 pb-5 dudo-subpage-header backdrop-blur-xl">
         <button onClick={onBack} className="grid h-10 w-10 place-items-center rounded-full bg-white shadow-sys-sm">
           <Icon name="ph-x" className="text-2xl" />
         </button>

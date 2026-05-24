@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import BottomNav from "./components/BottomNav.jsx";
 import FilterSheet from "./components/FilterSheet.jsx";
 import RatingReviewModal from "./components/RatingReviewModal.jsx";
@@ -63,6 +63,7 @@ export default function App() {
   const [onboardingDone, setOnboardingDone] = useState(false);
   const [swipeStart, setSwipeStart] = useState(null);
   const [swipingBack, setSwipingBack] = useState(false);
+  const appShellRef = useRef(null);
 
   const showToast = (message) => {
     setToast(message);
@@ -119,7 +120,7 @@ export default function App() {
   };
 
   const handleTouchMove = (event) => {
-    if (!swipeStart || swipeStart.x > 32) return;
+    if (!swipeStart || swipeStart.x > 50) return;
     const touch = event.touches[0];
     const dx = touch.clientX - swipeStart.x;
     const dy = Math.abs(touch.clientY - swipeStart.y);
@@ -134,7 +135,7 @@ export default function App() {
     const elapsed = Date.now() - swipeStart.t;
     setSwipeStart(null);
     setSwipingBack(false);
-    if (swipeStart.x <= 32 && dx > 82 && dy < 58 && elapsed < 700) {
+    if (swipeStart.x <= 50 && dx > 60 && dy < 58 && elapsed < 700) {
       navigator.vibrate?.(8);
       goBackFromFlow();
     }
@@ -270,7 +271,7 @@ export default function App() {
   const screenKey = studioFlowPage || activeTab;
 
   useEffect(() => {
-    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+    appShellRef.current?.scrollTo({ top: 0, left: 0, behavior: "auto" });
   }, [screenKey]);
 
   useEffect(() => {
@@ -285,7 +286,7 @@ export default function App() {
 
   return (
     <div className="h-[100dvh] bg-[#F9FAFB] sm:bg-[#06074A] flex justify-center overflow-hidden">
-      <div className="app-shell mx-auto bg-[#F9FAFB] shadow-sys-lg relative">
+      <div className="app-shell mx-auto bg-[#F9FAFB] shadow-sys-lg relative" ref={appShellRef}>
         <StatusBar />
         {!onboardingDone && (
           <div className="app-screen">

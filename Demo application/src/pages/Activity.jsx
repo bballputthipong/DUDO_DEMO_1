@@ -112,7 +112,7 @@ export default function Activity({
         <button onClick={() => onOpenVerticalList("Booking History")} className="float-right -mt-12 grid h-10 w-10 place-items-center rounded-full bg-[#AAF980] text-[#111827] shadow-sys-sm">
           <Icon name="ph-arrow-right" className="text-xl" />
         </button>
-        <div className="flex gap-4 overflow-x-auto pb-2 pt-1 no-scrollbar">
+        <div className="scroll-edge-fade scroll-edge-fade-container flex gap-4 overflow-x-auto pb-2 pt-1 no-scrollbar">
           {studios.slice(0, 4).map((studio) => (
             <button key={studio.id} onClick={() => onOpenVerticalList("Booking History")} className="w-52 shrink-0 overflow-hidden rounded-[22px] bg-white text-left shadow-sys-sm">
               <img src={studio.image} alt={studio.name} className="h-32 w-full object-cover" />

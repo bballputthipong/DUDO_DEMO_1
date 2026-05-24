@@ -71,7 +71,7 @@ export default function PersonalDashboard({ onBack, onOpenStudio, onOpenVertical
             <h2 className="text-2xl font-semibold leading-none">Recommended Activities</h2>
             <button onClick={() => onOpenVerticalList("Recommended Activities")} className="text-sm font-semibold text-green-600">See all</button>
           </div>
-          <div className="flex gap-4 overflow-x-auto pb-2 no-scrollbar">
+          <div className="scroll-edge-fade scroll-edge-fade-container flex gap-4 overflow-x-auto pb-2 no-scrollbar">
             {studios.slice(1, 4).map((studio, index) => (
               <button key={studio.id} onClick={() => onOpenStudio(studio)} className="w-52 shrink-0 overflow-hidden rounded-[22px] bg-white text-left shadow-sys-sm">
                 <div className="relative h-32">

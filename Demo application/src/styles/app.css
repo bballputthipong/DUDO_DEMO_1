@@ -47,6 +47,22 @@ body {
   overflow: hidden;
 }
 
+/* ── Utilities ────────────────────────────── */
+
+.scroll-edge-fade {
+  mask-image: linear-gradient(to right, black 90%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, black 90%, transparent 100%);
+}
+
+.scroll-edge-fade-container {
+  margin-right: -20px;
+  padding-right: 20px;
+}
+
+.dudo-subpage-header {
+  padding-top: max(32px, calc(16px + var(--sat)));
+}
+
 /* ── Status Bar ────────────────────────────── */
 
 .status-bar {
@@ -60,9 +76,9 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: rgba(249, 250, 251, 0.8);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: rgba(249, 250, 251, 0.97);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   color: #111827;
   font-size: 15px;
   font-weight: 600;

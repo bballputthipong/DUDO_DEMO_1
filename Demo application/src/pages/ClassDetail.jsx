@@ -90,7 +90,7 @@ export default function ClassDetail({
             </div>
             <button onClick={() => onOpenVerticalList("Similar Classes")} className="h-9 rounded-full bg-[#E5D9CB] px-4 text-sm font-semibold">See all</button>
           </div>
-          <div className="mb-4 flex gap-2 overflow-x-auto no-scrollbar">
+          <div className="scroll-edge-fade scroll-edge-fade-container mb-4 flex gap-2 overflow-x-auto no-scrollbar">
             {dates.map((item) => (
               <Pill key={item} active={date === item} onClick={() => setDate(item)}>{item}</Pill>
             ))}
@@ -129,7 +129,7 @@ export default function ClassDetail({
           <p className="mt-3 text-sm leading-6 text-[#111827]/68">
             {className} blends guided warm-up, skill work, and a clear cooldown. The instructor checks form throughout so the session feels structured without losing the studio energy.
           </p>
-          <div className="mt-4 flex gap-2 overflow-x-auto no-scrollbar">
+          <div className="scroll-edge-fade scroll-edge-fade-container mt-4 flex gap-2 overflow-x-auto no-scrollbar">
             {["Form check", "Small group", "DUDO verified"].map((item) => (
               <Pill key={item} active={false} onClick={() => undefined}>{item}</Pill>
             ))}
@@ -138,7 +138,7 @@ export default function ClassDetail({
 
         <section>
           <h2 className="mb-4 text-2xl font-semibold leading-none">Relevant Class</h2>
-          <div className="flex gap-4 overflow-x-auto pb-2 no-scrollbar">
+          <div className="scroll-edge-fade scroll-edge-fade-container flex gap-4 overflow-x-auto pb-2 no-scrollbar">
             {related.map((item) => (
               <button key={item.id} onClick={() => onOpenStudio(item)} className="w-44 shrink-0 text-left">
                 <img src={item.image} alt={item.classes[0]} className="h-36 w-full rounded-[22px] object-cover" />
@@ -164,7 +164,7 @@ function GalleryStrip({ onOpenGallery, onOpenGallerySection }) {
           <Icon name="ph-arrow-right" className="text-xl" />
         </button>
       </div>
-      <div className="flex gap-3 overflow-x-auto no-scrollbar">
+      <div className="scroll-edge-fade scroll-edge-fade-container flex gap-3 overflow-x-auto no-scrollbar">
         {gallerySections.map((section) => (
           <button key={section.id} onClick={() => onOpenGallerySection(section)} className="w-36 shrink-0 overflow-hidden rounded-[22px] bg-[#E5D9CB] text-left">
             <img src={section.images[0]} alt={section.label} className="h-28 w-full object-cover" />

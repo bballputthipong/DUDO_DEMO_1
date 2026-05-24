@@ -65,7 +65,7 @@ export default function Home({ credits, activeBooking, onNavigate, onBook, onOpe
 
       <section>
         <SectionHeader title="Trending studio" action="See all" onClick={() => onOpenVerticalList("Trending Studios")} />
-        <div className="flex gap-4 overflow-x-auto pb-2 no-scrollbar">
+        <div className="scroll-edge-fade scroll-edge-fade-container flex gap-4 overflow-x-auto pb-2 no-scrollbar">
           {recommended.map((studio) => (
             <StudioCard
               key={studio.id}
@@ -102,7 +102,7 @@ export default function Home({ credits, activeBooking, onNavigate, onBook, onOpe
 
       <section>
         <SectionHeader title="Recommend Studio" action="Open" onClick={() => onOpenVerticalList("Recommended Studios")} />
-        <div className="flex gap-4 overflow-x-auto pb-2 no-scrollbar">
+        <div className="scroll-edge-fade scroll-edge-fade-container flex gap-4 overflow-x-auto pb-2 no-scrollbar">
           {studios.slice(1, 5).map((studio) => (
             <StudioCard
               key={studio.id}
@@ -119,7 +119,7 @@ export default function Home({ credits, activeBooking, onNavigate, onBook, onOpe
 
       <section>
         <SectionHeader title="Trending class" action="Book" onClick={() => onOpenVerticalList("Trending Classes")} />
-        <div className="flex gap-4 overflow-x-auto pb-2 no-scrollbar">
+        <div className="scroll-edge-fade scroll-edge-fade-container flex gap-4 overflow-x-auto pb-2 no-scrollbar">
           {studios.slice(0, 5).map((studio) => (
             <article key={studio.id} className="w-44 shrink-0">
               <button onClick={() => onOpenClass(studio, studio.classes[0])} className="relative h-36 w-full overflow-hidden rounded-[22px] bg-[#F3F4F6] text-left">
@@ -141,7 +141,7 @@ export default function Home({ credits, activeBooking, onNavigate, onBook, onOpe
       </section>
 
       <section>
-        <div className="mb-3 flex gap-2 overflow-x-auto no-scrollbar">
+        <div className="scroll-edge-fade scroll-edge-fade-container mb-3 flex gap-2 overflow-x-auto no-scrollbar">
           {["Filter", "Pilates", "Yoga", "Silom-Sathorn", "Sukhumvit"].map((item, index) => (
             <button
               key={item}

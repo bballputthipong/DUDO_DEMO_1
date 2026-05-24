@@ -73,7 +73,7 @@ function CommunityTabs() {
   const activeTab = "Friend";
 
   return (
-    <div className="flex gap-5 overflow-x-auto no-scrollbar">
+    <div className="scroll-edge-fade scroll-edge-fade-container flex gap-5 overflow-x-auto no-scrollbar">
       {tabs.map((tab) => (
         <button
           key={tab}
@@ -88,7 +88,7 @@ function CommunityTabs() {
 
 function Stories() {
   return (
-    <div className="flex gap-4 overflow-x-auto no-scrollbar">
+    <div className="scroll-edge-fade scroll-edge-fade-container flex gap-4 overflow-x-auto no-scrollbar">
       <button className="relative grid h-20 w-20 shrink-0 place-items-center rounded-full bg-[#E5D9CB] text-3xl">
         <Icon name="ph-plus" />
       </button>

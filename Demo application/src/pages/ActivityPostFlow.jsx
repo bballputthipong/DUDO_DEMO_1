@@ -84,7 +84,7 @@ export default function ActivityPostFlow({ booking, onBack, onPublish }) {
             ))}
           </div>
         </div>
-        <div className="flex gap-2 overflow-x-auto no-scrollbar">
+        <div className="scroll-edge-fade scroll-edge-fade-container flex gap-2 overflow-x-auto no-scrollbar">
           {["Distance", "Pace", "Duration", "Calories", "Heart Rate"].map((item) => (
             <span key={item} className="shrink-0 rounded-full bg-[#E5D9CB] px-3 py-2 text-sm font-semibold">{item}</span>
           ))}

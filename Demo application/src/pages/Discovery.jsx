@@ -133,7 +133,7 @@ function MainLanding({ category, setCategory, onOpenNearby, dates, date, setDate
 
       <section>
         <SectionHeader title="Coupon" action="More" />
-        <div className="flex gap-4 overflow-x-auto no-scrollbar">
+        <div className="scroll-edge-fade scroll-edge-fade-container flex gap-4 overflow-x-auto no-scrollbar">
           {["Move More Challenge", "Recovery Duo", "Low-credit Lunch"].map((title, index) => (
             <button key={title} className={`h-40 w-36 shrink-0 rounded-[22px] p-4 text-left shadow-sys-sm ${index === 0 ? "bg-[#4D54F8] text-white" : "bg-white text-[#111827]"}`}>
               <Icon name={index === 0 ? "ph-ticket" : "ph-gift"} className={`text-3xl ${index === 0 ? "text-[#AAF980]" : "text-primary-500"}`} />
@@ -149,7 +149,7 @@ function MainLanding({ category, setCategory, onOpenNearby, dates, date, setDate
       <HorizontalStudioSection title="Low Credits" studios={studios.filter((studio) => studio.credits <= 4)} onOpenStudio={onOpenStudio} onBook={onBook} onOpenVerticalList={onOpenVerticalList} favorites={favorites} onFavorite={onFavorite} dark />
 
       <section>
-        <div className="mb-3 flex gap-2 overflow-x-auto no-scrollbar">
+        <div className="scroll-edge-fade scroll-edge-fade-container mb-3 flex gap-2 overflow-x-auto no-scrollbar">
           <Pill active onClick={onOpenFilter}>
             <Icon name="ph-sliders-horizontal" className="mr-1 align-[-1px]" />
             Filter
@@ -170,7 +170,7 @@ function HorizontalStudioSection({ title, studios, onOpenStudio, onBook, onOpenV
   return (
     <section className={dark ? "rounded-[22px] bg-[#E5D9CB] p-4" : ""}>
       <SectionHeader title={title} action="Open" onClick={() => onOpenVerticalList?.(title)} />
-      <div className="flex gap-4 overflow-x-auto pb-2 no-scrollbar">
+      <div className="scroll-edge-fade scroll-edge-fade-container flex gap-4 overflow-x-auto pb-2 no-scrollbar">
         {studios.map((studio) => (
           <StudioCard
             key={studio.id}
@@ -258,7 +258,7 @@ function NearbyLanding({ mode, setMode, locationQuery, setLocationQuery, categor
         </button>
         <div className="overflow-y-auto px-5 pb-5" style={{ maxHeight: sheetSize === "expanded" ? "calc(58vh - 3rem)" : "calc(25vh - 3rem)" }}>
         <SectionHeader title="Closed friend near you" action="View" onClick={() => onNavigate("Community")} />
-        <div className="mb-5 flex gap-3 overflow-x-auto no-scrollbar">
+        <div className="scroll-edge-fade scroll-edge-fade-container mb-5 flex gap-3 overflow-x-auto no-scrollbar">
           {categories.map((cat) => (
             <Pill key={cat.id} active={category === cat.id} onClick={() => setCategory(cat.id)}>
               <Icon name={cat.icon} className="mr-1 align-[-1px]" />
@@ -331,7 +331,7 @@ function NearbyCommunity({ mode, setMode, locationQuery, setLocationQuery, dates
       <DiscoveryShelf title="Community" items={discoveryCommunities} />
 
       <section className="mt-6">
-        <div className="mb-3 flex gap-2 overflow-x-auto no-scrollbar">
+        <div className="scroll-edge-fade scroll-edge-fade-container mb-3 flex gap-2 overflow-x-auto no-scrollbar">
           <Pill active onClick={onOpenFilter}>
             <Icon name="ph-sliders-horizontal" className="mr-1 align-[-1px]" />
             Sort By
@@ -352,7 +352,7 @@ function DiscoveryShelf({ title, items }) {
   return (
     <section className="mt-7 border-t border-[#111827]/10 pt-5">
       <h2 className="mb-4 inline-flex bg-[#E5D9CB] px-3 py-1 text-2xl font-semibold leading-none">{title}</h2>
-      <div className="flex gap-4 overflow-x-auto no-scrollbar">
+      <div className="scroll-edge-fade scroll-edge-fade-container flex gap-4 overflow-x-auto no-scrollbar">
         {items.map((item) => (
           <button key={item.id} className="relative h-36 w-36 shrink-0 overflow-hidden rounded-[24px] bg-[#E5D9CB] text-left shadow-sys-sm">
             <img src={item.image} alt={item.name} className="h-full w-full object-cover" />
@@ -371,7 +371,7 @@ function DiscoveryShelf({ title, items }) {
 function ExploreLanding({ onOpenArticle, onOpenFilter }) {
   return (
     <div className="px-5 pt-5">
-      <div className="mb-5 flex gap-2 overflow-x-auto no-scrollbar">
+      <div className="scroll-edge-fade scroll-edge-fade-container mb-5 flex gap-2 overflow-x-auto no-scrollbar">
         {["Filter", "Following", "Citywide", "Nearby", "Recovery", "Climb"].map((item, index) => (
           <button
             key={item}

@@ -87,7 +87,7 @@ export default function StudioDetail({
         <section className="space-y-6 px-5 pt-5">
           <StudioSummary studio={studio} onOpenReview={onOpenReview} />
 
-          <div className="flex max-w-full gap-2 overflow-x-auto no-scrollbar">
+          <div className="scroll-edge-fade scroll-edge-fade-container flex max-w-full gap-2 overflow-x-auto no-scrollbar">
             {studio.tags.map((tag) => (
               <Pill key={tag} active={false} onClick={() => setCategory(tag)}>{tag}</Pill>
             ))}
@@ -104,12 +104,12 @@ export default function StudioDetail({
               </button>
             </div>
 
-            <div className="mb-3 flex max-w-full gap-2 overflow-x-auto no-scrollbar">
+            <div className="scroll-edge-fade scroll-edge-fade-container mb-3 flex max-w-full gap-2 overflow-x-auto no-scrollbar">
               {sections.map((item) => (
                 <Pill key={item} active={category === item} onClick={() => setCategory(item)}>{item}</Pill>
               ))}
             </div>
-            <div className="mb-4 flex max-w-full gap-2 overflow-x-auto no-scrollbar">
+            <div className="scroll-edge-fade scroll-edge-fade-container mb-4 flex max-w-full gap-2 overflow-x-auto no-scrollbar">
               {dates.map((item) => (
                 <Pill key={item} active={date === item} onClick={() => setDate(item)}>{item}</Pill>
               ))}
@@ -291,7 +291,7 @@ function RelatedStudios({ studios, onOpenStudio, onFavorite, favorites }) {
   return (
     <section>
       <h2 className="mb-4 text-2xl font-semibold leading-none">Related Studio</h2>
-      <div className="flex gap-4 overflow-x-auto pb-2 no-scrollbar">
+      <div className="scroll-edge-fade scroll-edge-fade-container flex gap-4 overflow-x-auto pb-2 no-scrollbar">
         {studios.map((studio) => (
           <StudioCard
             key={studio.id}

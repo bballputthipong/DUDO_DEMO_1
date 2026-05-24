@@ -32,7 +32,7 @@ export default function ActivityDetail({ activity, onBack, onOpenVerticalList })
           </div>
         </div>
 
-        <div className="flex gap-2 overflow-x-auto no-scrollbar">
+        <div className="scroll-edge-fade scroll-edge-fade-container flex gap-2 overflow-x-auto no-scrollbar">
           {["Bouldering", "Agility", "Endurance", "Intelligence"].map((tag, index) => (
             <Pill key={tag} active={index === 0} onClick={() => undefined}>{tag}</Pill>
           ))}
@@ -77,7 +77,7 @@ export default function ActivityDetail({ activity, onBack, onOpenVerticalList })
             <h2 className="text-2xl font-semibold leading-none">Do Again / Similar Activities</h2>
             <button onClick={() => onOpenVerticalList("Similar Activities")} className="text-sm font-semibold">View all <Icon name="ph-caret-right" /></button>
           </div>
-          <div className="flex gap-4 overflow-x-auto pb-2 no-scrollbar">
+          <div className="scroll-edge-fade scroll-edge-fade-container flex gap-4 overflow-x-auto pb-2 no-scrollbar">
             {studios.slice(1, 4).map((studio) => (
               <button key={studio.id} onClick={() => onOpenVerticalList("Similar Activities")} className="w-44 shrink-0 overflow-hidden rounded-[22px] bg-white text-left shadow-sys-sm">
                 <img src={studio.image} alt={studio.classes[0]} className="h-28 w-full object-cover" />
