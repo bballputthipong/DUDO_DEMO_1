@@ -84,7 +84,7 @@ export default function Discovery({ onBook, onNavigate, onOpenStudio, onOpenArti
 
 function DiscoveryHeader({ subTab, setSubTab }) {
   return (
-    <div className="sticky top-0 z-30 glass-light px-5 pb-3" style={{ paddingTop: "calc(12px + env(safe-area-inset-top, 0px))" }}>
+    <div className="sticky top-0 z-30 glass-light px-5 pb-3" style={{ paddingTop: "max(32px, calc(16px + env(safe-area-inset-top, 0px)))" }}>
       <div className="flex items-center gap-3">
         <div className="flex flex-1 rounded-full bg-white/80 p-1">
           {["Main", "Near by", "Explore"].map((tab) => (

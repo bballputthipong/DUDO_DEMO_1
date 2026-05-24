@@ -216,7 +216,8 @@ button:disabled {
 }
 
 .app-shell {
-  width: min(100vw, 430px);
+  width: 100%;
+  max-width: 640px;
   height: 100dvh;
   overflow-x: hidden;
   overflow-y: auto;
@@ -311,7 +312,7 @@ button:disabled {
 }
 
 .dudo-page {
-  padding: calc(8px + var(--sat)) 20px calc(124px + var(--sab));
+  padding: max(32px, calc(16px + var(--sat))) 20px calc(124px + var(--sab));
 }
 
 .dudo-card {

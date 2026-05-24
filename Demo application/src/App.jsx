@@ -284,7 +284,7 @@ export default function App() {
   }, [studioFlowPage, filterOpen, reviewOpen, snapOpen, verticalListBackPage]);
 
   return (
-    <div className="h-[100dvh] bg-[#06074A] flex justify-center overflow-hidden">
+    <div className="h-[100dvh] bg-[#F9FAFB] sm:bg-[#06074A] flex justify-center overflow-hidden">
       <div className="app-shell mx-auto bg-[#F9FAFB] shadow-sys-lg relative">
         <StatusBar />
         {!onboardingDone && (
