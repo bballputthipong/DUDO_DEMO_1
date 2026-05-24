@@ -2,6 +2,10 @@
 node_modules/
 dist/
 *.log
+.env*.local
+.vercel/
 
 Demo application/node_modules/
 Demo application/dist/
+Demo application/.env*.local
+Demo application/.vercel/
