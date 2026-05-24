@@ -10,7 +10,7 @@ export default function BottomNav({ activeTab, setActiveTab }) {
   ];
 
   return (
-    <nav className="fixed bottom-4 left-1/2 z-40 w-[min(86vw,372px)] -translate-x-1/2 rounded-full glass-light p-1.5 shadow-sys-lg">
+    <nav className="fixed bottom-[18px] left-1/2 z-40 w-[min(86vw,372px)] -translate-x-1/2 rounded-full glass-light p-1.5 shadow-sys-lg">
       <div className="grid grid-cols-5 gap-0.5">
         {tabs.map(([tab, icon]) => (
           <button

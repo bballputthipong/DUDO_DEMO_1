@@ -4,6 +4,7 @@ import FilterSheet from "./components/FilterSheet.jsx";
 import RatingReviewModal from "./components/RatingReviewModal.jsx";
 import SnapShareStudio from "./components/SnapShareStudio.jsx";
 import Toast from "./components/Toast.jsx";
+import StatusBar from "./components/StatusBar.jsx";
 import Onboarding from "./pages/Onboarding.jsx";
 import Home from "./pages/Home.jsx";
 import Discovery from "./pages/Discovery.jsx";
@@ -283,8 +284,9 @@ export default function App() {
   }, [studioFlowPage, filterOpen, reviewOpen, snapOpen, verticalListBackPage]);
 
   return (
-    <div className="min-h-screen bg-[#E5D9CB]">
-      <div className="app-shell mx-auto min-h-screen bg-[#F9FAFB] shadow-sys-lg">
+    <div className="min-h-screen bg-[#06074A] flex justify-center">
+      <div className="app-shell mx-auto bg-[#F9FAFB] shadow-sys-lg relative overflow-hidden">
+        <StatusBar />
         {!onboardingDone && (
           <div className="app-screen">
             <Onboarding onComplete={handleCompleteOnboarding} />
@@ -600,6 +602,7 @@ export default function App() {
       {reviewOpen && <RatingReviewModal booking={bookingForModals} onClose={() => setReviewOpen(false)} onSubmit={handleReviewSubmit} />}
       {snapOpen && <SnapShareStudio booking={bookingForModals} onClose={() => setSnapOpen(false)} onShare={handleShare} />}
       <Toast message={toast} />
+      <div className="home-indicator" aria-hidden="true"></div>
     </div>
   );
 }
