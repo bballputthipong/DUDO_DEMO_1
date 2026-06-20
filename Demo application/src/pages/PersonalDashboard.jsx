@@ -5,7 +5,7 @@ import { studios } from "../data/mockData.js";
 export default function PersonalDashboard({ onBack, onOpenStudio, onOpenVerticalList }) {
   return (
     <main className="min-h-screen bg-[#F9FAFB] pb-28">
-      <header className="flex items-center justify-between px-5 py-6">
+      <header className="flex items-center justify-between px-5 pb-5 dudo-subpage-header">
         <button onClick={onBack} className="grid h-12 w-12 place-items-center rounded-full bg-white shadow-sys-sm">
           <Icon name="ph-arrow-left" className="text-2xl" />
         </button>
